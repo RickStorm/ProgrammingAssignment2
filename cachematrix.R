@@ -5,7 +5,7 @@
 
 makeCacheMatrix <- function(x = matrix()) {
   
-  #Initialize the variable holding the cached inverse matrix
+  #Initialize variable holding the cached inverse matrix
   cachedInverse <- NULL
   
   # sets the value of matrix to y using the superassignment operator 
@@ -16,13 +16,23 @@ makeCacheMatrix <- function(x = matrix()) {
   }
   
   
-  get <- function() x
+  get <- function()
+  { x
+                   }
   # get the value of x
   
-  setInverse <- function(inverse) cachedInverse <<- inverse
+  ##To Set the inverse of matrix
+  setInverse<-function(inverse)
+  { cachedInverse <<- inverse
+  }
   
-  getInverse <- function() cachedInverse
+  ##Tp get inverse matrix
+  getInverse <- function()
+   {
+    cachedInverse
   
+  }
+  ## Return a list of methods
   list(set = set, get = get,
        setInverse = setInverse,
        getInverse = getInverse)
